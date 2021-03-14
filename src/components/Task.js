@@ -1,19 +1,36 @@
-import { FaTimes } from 'react-icons/fa'
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import "../App.css"
+import Paper from '@material-ui/core/Paper';
+// const Task = ({ task, onDelete, onToggle }) => {
+//   return (
+//     <div
+//       className={`task ${task.reminder ? 'reminder' : ''}`}
+//       onDoubleClick={() => onToggle(task.id)}
+//     >
+//       <h3>
+//         {task.text}{' '}
+//         <HighlightOffIcon
+//           style={{ color: 'red', cursor: 'pointer' }}
+//           onClick={() => onDelete(task.id)}
+//         />
+//       </h3>
+//       <p>{task.day}</p>
+//     </div>
+//   )
+// }
 
-const Task = ({ task, onDelete, onToggle }) => {
+// export default Task
+
+
+const Task = () => {
   return (
-    <div
-      className={`task ${task.reminder ? 'reminder' : ''}`}
-      onDoubleClick={() => onToggle(task.id)}
-    >
-      <h3>
-        {task.text}{' '}
-        <FaTimes
-          style={{ color: 'red', cursor: 'pointer' }}
-          onClick={() => onDelete(task.id)}
+    <div class='task'>
+      <Paper>
+        <p>This is a TEST TASK</p>
+        <HighlightOffIcon
         />
-      </h3>
-      <p>{task.day}</p>
+      <p>Monday</p>
+      </Paper>
     </div>
   )
 }

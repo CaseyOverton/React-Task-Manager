@@ -7,16 +7,39 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.breadCrumb {
+  margin-top: 0%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper {
+border: 10px, blueviolet;
+width: 800px;
+height: 400px;
+}
+.task {
+  background-color: coral;
+  width: 80%;
+  height: 400px;
+ 
+}
 
 .App-header {
-  background-color: #282c34;
+  color: #191b21; 
+  background: rgb(46,85,82);
+background: radial-gradient(circle, rgba(46,85,82,1) 0%, rgba(7,7,18,1) 46%, rgba(8,39,46,1) 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
 
