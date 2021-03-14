@@ -1,35 +1,54 @@
 import '../../App.css'
-import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
 import Task from "../Task"
+import { useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from "@material-ui/core/styles";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 
-const useStyles = makeStyles((theme) => ({
+
+const styles = makeStyles((theme) => ({
     root: {
+      width: '300px',
       display: 'flex',
-      flexDirection: 'column',
+      // flexDirection: 'row',
       flexWrap: 'wrap',
       '& > *': {
         margin: theme.spacing(1),
-        width: theme.spacing(16),
-        height: theme.spacing(16),
+  
       },
+    },
+    paper: {
+      opacity: 0.5,
+      backgroundColor: 'transparent',
+      // marginBottom: theme.spacing(6),
+      // padding: theme.spacing(3),
     },
   }));
 
 const Wapper = () => {
-    const classes = useStyles();
+  useEffect(() => {
+    Aos.init({duration: 2000});
+  },[];
+  }
+    const classes = styles();
     return (
-        <div class='wrapper'>
-    <Paper elevation={3}>
-        <div className={classes.root}>
+        <Paper elevation={3} className={classes.paper} varient='outlined'>
+          <div className='wrapper'>
+            <div className={classes.root}>
                 <Task />
                 <Task />
                 <Task />
                 <Task />
-        </div>
-    </Paper>
-    </div>
+                <Task />
+                <Task />
+                <Task />
+            </div>
+          </div>
+        </Paper>
+        
     )
 }
 

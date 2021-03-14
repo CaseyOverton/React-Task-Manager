@@ -15,7 +15,7 @@ export const Breadcrumb = () => {
               <Link>About</Link>
             </li>
             <li>
-              <Link>Users</Link>
+              <Link>Best Practices</Link>
             </li>
           </Breadcrumbs>
         </div>

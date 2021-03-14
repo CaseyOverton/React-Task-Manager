@@ -7,11 +7,12 @@ import Wrapper from "./components/TDSaver/Wapper"
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      
         <Breadcrumb />
-        <Wrapper />
         <Header />
-      </header>
+        <Wrapper />
+
+    
     </div>
   );
 }
