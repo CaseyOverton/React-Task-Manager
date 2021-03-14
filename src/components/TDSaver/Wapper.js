@@ -11,45 +11,79 @@ import 'aos/dist/aos.css'
 
 const styles = makeStyles((theme) => ({
     root: {
-      width: '300px',
+      width: '500px',
       display: 'flex',
       // flexDirection: 'row',
       flexWrap: 'wrap',
       '& > *': {
         margin: theme.spacing(1),
-  
       },
     },
     paper: {
       opacity: 0.5,
       backgroundColor: 'transparent',
-      // marginBottom: theme.spacing(6),
-      // padding: theme.spacing(3),
     },
   }));
 
 const Wapper = () => {
-  useEffect(() => {
-    Aos.init({duration: 2000});
-  },[];
-  }
+      useEffect(() => {
+        Aos.init({duration: 1000 });
+      },[]);
+  
     const classes = styles();
     return (
         <Paper elevation={3} className={classes.paper} varient='outlined'>
           <div className='wrapper'>
             <div className={classes.root}>
-                <Task />
-                <Task />
-                <Task />
-                <Task />
-                <Task />
-                <Task />
-                <Task />
+                <div data-aos='fade-up'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-down'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-left'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-up'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-left'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-right'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-down'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-up'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-left'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-right'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-up'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-left'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-up'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-down'>
+                  <Task/>
+                </div>
+                <div data-aos='fade-left'>
+                  <Task/>
+                </div>
             </div>
           </div>
         </Paper>
-        
-    )
-}
+      )
+    }
 
 export default Wapper

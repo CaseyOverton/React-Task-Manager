@@ -7,7 +7,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 
 
 // const Task = ({ task, onDelete, onToggle }) => {
@@ -32,20 +34,27 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 300,
+    minWidth: 500,
   },
   title: {
-    fontSize: 14,
+    fontSize: 16,
   },
   pos: {
     marginBottom: 12,
   },
+  icon: {
+    marginLeft: 400,
+  }
 });
 
 
 const Task = () => {
+  useEffect(() => {
+    Aos.init({duration: 1000 });
+  },[]);
   const classes = useStyles();
   return (
+  <div data-aos='fade-up'>
     <Card className={classes.root} variant="outlined">
     <CardContent>
       <Typography className={classes.title} color="textSecondary" gutterBottom>
@@ -57,8 +66,10 @@ const Task = () => {
       <Typography variant="body2" component="p">
         DATE
       </Typography>
+      <HighlightOffIcon className={classes.icon}/>
     </CardContent>
   </Card>
+</div>
    
   )
 }
