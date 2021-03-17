@@ -1,11 +1,25 @@
-import React from 'react'
-import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types'
 
-
-export const Button = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+const Button = ({ color, text, onClick }) => {
+  return (
+    <button
+      onClick={onClick}
+      style={{ backgroundColor: color }}
+      className='btn'
+    >
+      {text}
+    </button>
+  )
 }
+
+Button.defaultProps = {
+  color: 'steelblue',
+}
+
+Button.propTypes = {
+  text: PropTypes.string,
+  color: PropTypes.string,
+  onClick: PropTypes.func,
+}
+
+export default Button

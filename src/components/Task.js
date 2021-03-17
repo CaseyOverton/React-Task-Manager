@@ -5,32 +5,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
 
-
-// const Task = ({ task, onDelete, onToggle }) => {
-//   return (
-//     <div
-//       className={`task ${task.reminder ? 'reminder' : ''}`}
-//       onDoubleClick={() => onToggle(task.id)}
-//     >
-//       <h3>
-//         {task.text}{' '}
-//         <HighlightOffIcon
-//           style={{ color: 'red', cursor: 'pointer' }}
-//           onClick={() => onDelete(task.id)}
-//         />
-//       </h3>
-//       <p>{task.day}</p>
-//     </div>
-//   )
-// }
-
-// export default Task
 
 const useStyles = makeStyles({
   root: {
@@ -48,29 +27,34 @@ const useStyles = makeStyles({
 });
 
 
-const Task = () => {
+const Task = ({ task, onDelete, onToggle }) => {
   useEffect(() => {
     Aos.init({duration: 1000 });
   },[]);
   const classes = useStyles();
   return (
-  <div data-aos='fade-up'>
-    <Card className={classes.root} variant="outlined">
-    <CardContent>
-      <Typography className={classes.title} color="textSecondary" gutterBottom>
-        TASK 
-      </Typography>
-      <Typography className={classes.pos} color="textSecondary">
-        This is the Task 
-      </Typography>
-      <Typography variant="body2" component="p">
-        DATE
-      </Typography>
-      <HighlightOffIcon className={classes.icon}/>
-    </CardContent>
-  </Card>
-</div>
-   
+    <div
+       className={`task ${task.reminder ? 'reminder' : ''}`}
+      onDoubleClick={() => onToggle(task.id)}>
+      <div data-aos='fade-up'>
+        <Card className={classes.root} variant="outlined">
+          <CardContent>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Task
+          </Typography>
+          <Typography className={classes.pos} color="textSecondary">
+          {task.text}{' '}
+          </Typography>
+           <Typography variant="body2" component="p">
+          <p>{task.day}</p>
+          </Typography>
+         <HighlightOffIcon className={classes.icon} color='primary'style={{ color: 'red', cursor: 'pointer' }}
+          // onClick={() => onDelete(task.id)}/>
+          />
+        </CardContent>
+      </Card>
+    </div>
+  </div>
   )
 }
 
