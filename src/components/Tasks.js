@@ -6,7 +6,8 @@ import Paper from '@material-ui/core/Paper';
 import { withStyles } from "@material-ui/core/styles";
 import Aos from 'aos';
 import 'aos/dist/aos.css'
-
+import Button from './Button'
+import { useLocation } from 'react-router-dom'
 
 const styles = makeStyles((theme) => ({
     root: {
@@ -24,7 +25,8 @@ const styles = makeStyles((theme) => ({
     },
   }));
 
-const Tasks = ({ tasks, onDelete, onToggle }) => {
+const Tasks = ({ tasks, onDelete, onToggle, onAdd }) => {
+  const location = useLocation()
       useEffect(() => {
         Aos.init({duration: 1000 });
       },[]);
@@ -36,12 +38,18 @@ const Tasks = ({ tasks, onDelete, onToggle }) => {
             <div className={classes.root}>
                 <div data-aos='fade-up'>
                 {tasks.map((task, index) => (
-        <Task data-aos='fade-down'key={index} task={task} onDelete={onDelete} onToggle={onToggle} />
+        <Task data-aos='fade-down' key={index} task={task} onDelete={onDelete} onToggle={onToggle} />
                 ))}
+                <Button
+       color={'slateblue'}
+       text={'Add'}
+       onClick={onAdd}
+     />
             </div>
            </div>
          </div>
         </Paper>
+       
       )
   }
 export default Tasks

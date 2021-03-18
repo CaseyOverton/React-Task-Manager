@@ -9,13 +9,13 @@ export const Breadcrumb = () => {
         <div class='breadCrumb'>
           <Breadcrumbs aria-label="breadcrumb">
           <li>
-              <Link>Home</Link>
+              <Link color="black">Home</Link>
             </li>
             <li>
-              <Link>About</Link>
+              <Link color="black">About</Link>
             </li>
             <li>
-              <Link>Best Practices</Link>
+              <Link color="black">Best Practices</Link>
             </li>
           </Breadcrumbs>
         </div>
